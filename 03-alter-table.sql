@@ -1,7 +1,3 @@
--- Create the new database named 'SqlPractical'
-CREATE DATABASE SqlPractical;
-GO
-
 -- Switch to the 'SqlPractical' database
 USE SqlPractical;
 
