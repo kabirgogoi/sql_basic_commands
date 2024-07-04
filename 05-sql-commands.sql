@@ -1,8 +1,8 @@
 -- Create Students table
 CREATE TABLE Students (
     StudentID INT PRIMARY KEY IDENTITY(1,1),
-    FirstName NVARCHAR(50) NOT NULL,
-    LastName NVARCHAR(50) NOT NULL,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
     DateOfBirth DATE,
     EnrollmentDate DATE
 );
@@ -10,8 +10,8 @@ CREATE TABLE Students (
 -- Create Teachers table
 CREATE TABLE Teachers (
     TeacherID INT PRIMARY KEY IDENTITY(1,1),
-    FirstName NVARCHAR(50) NOT NULL,
-    LastName NVARCHAR(50) NOT NULL,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
     HireDate DATE,
     Subject NVARCHAR(50)
 );
@@ -19,11 +19,11 @@ CREATE TABLE Teachers (
 -- Create Classes table
 CREATE TABLE Classes (
     ClassID INT PRIMARY KEY IDENTITY(1,1),
-    ClassName NVARCHAR(100) NOT NULL,
+    ClassName VARCHAR(100) NOT NULL,
     TeacherID INT,
     StartDate DATE,
     EndDate DATE,
-    FOREIGN KEY (TeacherID) REFERENCES Teachers(TeacherID)
+   -- FOREIGN KEY (TeacherID) REFERENCES Teachers(TeacherID)
 );
 
 -- Create Enrollments table (junction table)
@@ -31,8 +31,8 @@ CREATE TABLE Enrollments (
     StudentID INT,
     ClassID INT,
     PRIMARY KEY (StudentID, ClassID),
-    FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
-    FOREIGN KEY (ClassID) REFERENCES Classes(ClassID)
+  --  FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
+ --   FOREIGN KEY (ClassID) REFERENCES Classes(ClassID)
 );
 
 -- Insert Records into Students
