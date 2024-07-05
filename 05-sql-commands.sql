@@ -23,7 +23,7 @@ CREATE TABLE Classes (
     TeacherID INT,
     StartDate DATE,
     EndDate DATE,
-   -- FOREIGN KEY (TeacherID) REFERENCES Teachers(TeacherID)
+   
 );
 
 -- Create Enrollments table (junction table)
@@ -31,8 +31,6 @@ CREATE TABLE Enrollments (
     StudentID INT,
     ClassID INT,
     PRIMARY KEY (StudentID, ClassID),
-  --  FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
- --   FOREIGN KEY (ClassID) REFERENCES Classes(ClassID)
 );
 
 -- Insert Records into Students
