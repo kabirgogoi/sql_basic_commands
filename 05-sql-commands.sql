@@ -13,7 +13,7 @@ CREATE TABLE Teachers (
     FirstName VARCHAR(50) NOT NULL,
     LastName VARCHAR(50) NOT NULL,
     HireDate DATE,
-    Subject NVARCHAR(50)
+    Subject VARCHAR(50)
 );
 
 -- Create Classes table
