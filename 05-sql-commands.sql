@@ -3,7 +3,7 @@ CREATE TABLE Students (
     StudentID INT PRIMARY KEY IDENTITY(1,1),
     FirstName VARCHAR(50) NOT NULL,
     LastName VARCHAR(50) NOT NULL,
-    DateOfBirth DATE,
+    AGE INT,
     EnrollmentDate DATE
 );
 
@@ -26,26 +26,7 @@ CREATE TABLE Classes (
    
 );
 
--- Create Enrollments table (junction table)
-CREATE TABLE Enrollments (
-    StudentID INT,
-    ClassID INT,
-    PRIMARY KEY (StudentID, ClassID),
-);
 
--- Insert Records into Students
-INSERT INTO Students (FirstName, LastName, DateOfBirth, EnrollmentDate) 
-VALUES 
-('Aarav', 'Sharma', '2008-04-15', '2023-06-10'),
-('Vivaan', 'Verma', '2009-06-25', '2023-06-10'),
-('Diya', 'Singh', '2007-08-20', '2023-06-10'),
-('Aanya', 'Kumar', '2010-09-10', '2023-06-10'),
-('Ishaan', 'Gupta', '2009-02-18', '2023-06-10'),
-('Ananya', 'Patel', '2008-07-22', '2023-06-10'),
-('Rohan', 'Agarwal', '2010-12-05', '2023-06-10'),
-('Meera', 'Reddy', '2009-11-17', '2023-06-10'),
-('Kavya', 'Nair', '2008-03-29', '2023-06-10'),
-('Aryan', 'Das', '2010-01-14', '2023-06-10');
 
 
 -- Insert Records into Teachers
@@ -78,29 +59,7 @@ VALUES
 ('Computer Science', 9, '2023-06-15', '2024-04-30'),
 ('Physical Education', 10, '2023-06-15', '2024-04-30');
 
--- Insert into Enrollments
-INSERT INTO Enrollments (StudentID, ClassID) 
-VALUES 
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 4),
-(5, 5),
-(6, 6),
-(7, 7),
-(8, 8),
-(9, 9),
-(10, 10),
-(1, 2),
-(2, 3),
-(3, 4),
-(4, 5),
-(5, 6),
-(6, 7),
-(7, 8),
-(8, 9),
-(9, 10),
-(10, 1);
+
 
 -- Delete a student
 DELETE FROM Students WHERE StudentID = 1;
