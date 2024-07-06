@@ -63,6 +63,93 @@ INSERT INTO Classes (ClassName, TeacherID, StartDate, EndDate) VALUES
 ('Economics 101', 10, '2023-06-15', '2023-12-15');
 
 
+-- Update the age of the student with StudentID = 1 to 16
+UPDATE Students
+SET AGE = 16
+WHERE StudentID = 1;
 
 
+-- Insert a new student record
+INSERT INTO Students (FirstName, LastName, AGE, EnrollmentDate)
+VALUES ('Rohit', 'Shah', 15, '2023-06-15');
+
+
+-- Delete the student record with StudentID = 2
+DELETE FROM Students
+WHERE StudentID = 2;
+
+-- Select the first name, last name, and age of all students
+SELECT FirstName, LastName, AGE
+FROM Students;
+
+-- Select distinct subjects taught by teachers
+SELECT DISTINCT Subject
+FROM Teachers;
+
+
+-- Select students whose age is greater than 14
+SELECT FirstName, LastName, AGE
+FROM Students
+WHERE AGE > 14;
+
+-- Select teachers who teach either Mathematics or Science
+SELECT FirstName, LastName
+FROM Teachers
+WHERE Subject IN ('Mathematics', 'Science');
+
+-- Select students whose age is between 13 and 15
+SELECT FirstName, LastName, AGE
+FROM Students
+WHERE AGE BETWEEN 13 AND 15;
+
+
+
+-- Group teachers by subject and count the number of teachers per subject
+SELECT Subject, COUNT(*) AS NumberOfTeachers
+FROM Teachers
+GROUP BY Subject;
+
+
+-- Group teachers by subject and select subjects with more than one teacher
+SELECT Subject, COUNT(*) AS NumberOfTeachers
+FROM Teachers
+GROUP BY Subject
+HAVING COUNT(*) > 1;
+
+-- Group teachers by subject and select subjects with more than one teacher
+SELECT Subject, COUNT(*) AS NumberOfTeachers
+FROM Teachers
+GROUP BY Subject
+HAVING COUNT(*) > 1;
+
+
+-- Select all students and order them by age in descending order
+SELECT FirstName, LastName, AGE
+FROM Students
+ORDER BY AGE DESC;
+
+-- Calculate the total age of all students
+SELECT SUM(AGE) AS TotalAge
+FROM Students;
+
+-- Calculate the average age of all students
+SELECT AVG(AGE) AS AverageAge
+FROM Students;
+
+-- Count the number of students
+SELECT COUNT(*) AS NumberOfStudents
+FROM Students;
+
+
+-- Count the number of students
+SELECT COUNT(*) AS NumberOfStudents
+FROM Students;
+
+-- Find the maximum age among all students
+SELECT MAX(AGE) AS OldestStudentAge
+FROM Students;
+
+-- Find the minimum age among all students
+SELECT MIN(AGE) AS YoungestStudentAge
+FROM Students;
 
